@@ -1,0 +1,31 @@
+redis-ha:
+  enabled: false
+
+controller:
+  replicas: 1
+
+server:
+  replicas: 1
+  # Notice the fix here: Ingress must be nested properly under server, 
+  # and we change the host to localhost.
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - localhost
+    tls:
+      - secretName: argocd-server-tls
+        hosts:
+          - localhost
+
+repoServer:
+  replicas: 1
+
+applicationSet:
+  replicas: 1
+
+global:
+  domain: argocd.example.com
+
+certificate:
+  enabled: true
