@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: This is python app developed by abhi
+  annotations: 
+    github.com/project-slug: Abhilash-cloud/python-app
+spec:
+  type: service
+  owner: pint
+  lifecycle: experimental
